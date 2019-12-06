@@ -42,13 +42,14 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
                 //set up structure
                 const cardsGoHere = document.querySelector('.cards-container');
                 cardsGoHere.append(card);
-                card.append(headline, author, imagePlace, citation);
+                card.append(headline, author);
+                author.append(imagePlace, citation)
                 imagePlace.append(img)
 
 
                 //add text
                 headline.textContent = ele.headline;
-                author.textContent = ele.authorName;
+                citation.textContent = ` By ${ele.authorName}`;
                 img.setAttribute('src', ele.authorPhoto);
             })
         })
